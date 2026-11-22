@@ -1,3 +1,271 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio de Kmar Kchaou, étudiante en Réseaux et Systèmes à la Faculté des Sciences de Sfax.">
+  <title>Kmar Kchaou — Portfolio Réseaux &amp; Systèmes</title>
 
-<h1>Kmar Kchaou</h1>
-<p>Portfolio — Réseaux et Systèmes</p>
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #0a1120;
+      --surface: #111c30;
+      --border: #293954;
+      --text: #f1f5ff;
+      --muted: #b8c6dc;
+      --accent: #88e9df;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font: 1rem/1.65 system-ui, sans-serif;
+    }
+
+    a { color: var(--accent); }
+    a:hover { text-decoration: underline; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+    p { margin: 0 0 1rem; color: var(--muted); }
+    h1, h2, h3 { margin: 0 0 .65rem; line-height: 1.2; }
+    h2 { font-size: clamp(1.6rem, 4vw, 2.25rem); }
+
+    .container { width: min(1080px, calc(100% - 2rem)); margin-inline: auto; }
+
+    .topbar { border-bottom: 1px solid var(--border); }
+
+    .navigation, .actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .75rem 1.25rem;
+    }
+
+    .navigation { justify-content: space-between; padding-block: 1rem; }
+    .navigation a { text-decoration: none; }
+    .navigation a:hover { text-decoration: underline; }
+    .brand { font-weight: 750; color: var(--text); }
+
+    .hero {
+      padding-block: clamp(3.5rem, 10vw, 7rem);
+      background: radial-gradient(ellipse at top right, #183853, transparent 65%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero h1 { font-size: clamp(2.8rem, 9vw, 5.3rem); letter-spacing: -.05em; }
+    .hero p { max-width: 64ch; }
+    .hero .subtitle { color: var(--accent); font-size: 1.2rem; font-weight: 650; }
+    .actions { margin-top: 1.5rem; }
+
+    .button {
+      display: inline-block;
+      padding: .65rem 1rem;
+      border: 1px solid var(--accent);
+      border-radius: .6rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .primary { background: var(--accent); color: #0a1720; }
+    section { padding-block: 2.25rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 285px), 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .card {
+      padding: 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: .85rem;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .tools {
+      color: var(--accent);
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 1rem;
+      padding-block: 1.25rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="container navigation" aria-label="Navigation principale">
+      <a class="brand" href="#accueil">Kmar Kchaou</a>
+      <div class="navigation">
+        <a href="#projets">Projets</a>
+        <a href="#stages">Stages</a>
+        <a href="#ateliers">Ateliers</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="accueil">
+    <div class="hero">
+      <div class="container">
+        <h1>Kmar Kchaou</h1>
+        <p class="subtitle">Étudiante en Réseaux et Systèmes</p>
+        <p>
+          Je suis en troisième année de licence en ingénierie des systèmes
+          informatiques à la Faculté des Sciences de Sfax. Je recherche un
+          stage de PFE en infrastructure informatique, administration systèmes
+          ou cloud.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#projets">Voir mes projets</a>
+          <a class="button" href="cv-kmar-kchaou.pdf" download>Télécharger mon CV</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <section id="projets">
+        <h2>Projets académiques</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Réseau IoT et suivi des mesures</h3>
+            <p>
+              J’ai simulé un réseau de capteurs avec Contiki et Cooja,
+              puis visualisé les mesures dans un tableau de bord Ubidots.
+            </p>
+            <p class="tools">Contiki · Cooja · IPv6 · Ubidots</p>
+          </article>
+
+          <article class="card">
+            <h3>Laboratoire d’administration systèmes</h3>
+            <p>
+              J’ai réalisé des travaux pratiques sur Active Directory,
+              DNS et DHCP dans un environnement virtualisé.
+            </p>
+            <p class="tools">Windows Server · Active Directory · DNS · DHCP · VirtualBox</p>
+          </article>
+
+          <article class="card">
+            <h3>Priorisation des urgences par logique floue</h3>
+            <p>
+              J’ai travaillé sur un prototype pédagogique qui compare les
+              méthodes d’inférence Mamdani et Sugeno pour attribuer un score
+              de priorité à des scénarios simulés.
+            </p>
+            <p class="tools">Python · Mamdani · Sugeno</p>
+          </article>
+
+          <article class="card">
+            <h3>Agentic AI pour la supervision informatique</h3>
+            <p>
+              Cette étude de conception explore comment un agent IA pourrait
+              lire une alerte, consulter les données de supervision et
+              proposer une action à valider par un opérateur.
+            </p>
+            <p class="tools">Agentic AI · n8n · Supervision</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="stages">
+        <h2>Stages</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Finlogik · Application RH</h3>
+            <p>
+              J’ai contribué à une application RH qui automatise le
+              rapprochement entre les CV et les offres et certaines étapes
+              du processus de recrutement.
+            </p>
+            <p class="tools">Stage de 2 mois · Matching CV · Automatisation</p>
+          </article>
+
+          <article class="card">
+            <h3>Water Technology · Développement web</h3>
+            <p>
+              J’ai réalisé un site web statique avec React au cours
+              d’un stage d’un mois.
+            </p>
+            <p class="tools">React · Développement web</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ateliers">
+        <h2>Ateliers et méthode de travail</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Ateliers n8n</h3>
+            <p>
+              Découverte de l’automatisation avec n8n, de la construction
+              d’un workflow au test de ses étapes. Les sujets abordés
+              incluent les déclencheurs, les conditions et les échanges
+              avec des API.
+            </p>
+            <p class="tools">n8n · Workflows · API</p>
+          </article>
+
+          <article class="card">
+            <h3>Démarche Agile</h3>
+            <p>
+              Pour organiser un projet académique, je découpe les besoins
+              en tâches, je priorise les fonctionnalités et je vérifie
+              les résultats à chaque itération.
+            </p>
+            <p class="tools">Backlog · Priorisation · Itérations</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="competences">
+        <h2>Compétences</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Systèmes et réseaux</h3>
+            <p>Linux, Windows Server, Active Directory, DNS, DHCP et Wireshark.</p>
+          </article>
+
+          <article class="card">
+            <h3>Virtualisation et IoT</h3>
+            <p>VirtualBox, Contiki, Cooja et Ubidots.</p>
+          </article>
+
+          <article class="card">
+            <h3>Développement et automatisation</h3>
+            <p>Python, Java, C, React, GitHub et n8n.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/kmar24">Mon profil GitHub</a>
+          <a class="button" href="cv-kmar-kchaou.pdf" download>Télécharger mon CV</a>
+          <!-- Ajoute ici tes liens LinkedIn et e-mail professionnel. -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">Kmar Kchaou · Réseaux et Systèmes</div>
+  </footer>
+</body>
+</html>
